@@ -1,0 +1,196 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    animation: slideInDown 1s ease-out;
+}
+
+.first {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #fff;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:hover::before,
+nav ul li a.active::before {
+    visibility: visible;
+    width: 100%;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #ff6347; /* Change color on hover and when active */
+}
+
+section {
+    padding: 100px 20px 60px; /* Adjusted padding to account for fixed header */
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    animation: fadeIn 1s ease-in;
+}
+
+section:nth-of-type(even) {
+    background-color: #e9e9e9;
+}
+
+h2 {
+    margin-top: 0;
+    font-size: 28px;
+    text-align: center;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.container p {
+    max-width: 800px;
+    margin: 20px auto;
+    font-size: 18px;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+.education-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+.education-details p {
+    text-align: left;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+.carousel {
+    display: flex;
+    justify-content: center; /* Center the images horizontally */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px; /* Increased gap between images */
+    padding: 20px 0; /* Increased padding */
+    animation: slideInLeft 1s ease-out;
+    width: 100%;
+}
+
+.carousel img {
+    width: 300px; /* Increased width for larger images */
+    height: auto;
+    scroll-snap-align: center;
+    flex-shrink: 0;
+    border-radius: 10px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.8;
+}
+
+.carousel img:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.container {
+    margin-bottom: 40px;
+}
+
+.container h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.container p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Animations */
+@keyframes slideInDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
